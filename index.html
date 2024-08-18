@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <!DOCTYPE html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full CRUDS</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1>Product <span class="text-warning">Management</span> System</h1>
+      <div class="form-group my-4">
+        <label for="productName">Product Name</label>
+        <input
+          oninput=" validateName()"
+          type="text"
+          id="productName"
+          class="form-control"
+          placeholder="Enter Product Name"
+        />
+        <p id="invalidName" class="text-danger d-none">
+          Please enter name with 4 capital Charachter
+        </p>
+      </div>
+      <div class="form-group my-4">
+        <label for="productPrice">Product Price</label>
+        <input
+          type="number"
+          id="productPrice"
+          class="form-control"
+          placeholder="Enter Product Price"
+        />
+      </div>
+      <div class="form-group my-4">
+        <label for="productCateg">Product Category</label>
+        <input
+          type="text"
+          id="productCateg"
+          class="form-control"
+          placeholder="Enter Product Category"
+        />
+      </div>
+      <div class="form-group my-4">
+        <label for="productDesc">Product Description</label>
+        <input
+          type="text"
+          id="productDesc"
+          class="form-control"
+          placeholder="Enter your opinion about product"
+        />
+      </div>
+      <button
+        id="addBtn"
+        class="btn btn-outline-primary"
+        onclick="addProduct()"
+      >
+        Add Product
+      </button>
+
+      <button
+        class="btn btn-success d-none"
+        id="svaeBtn"
+        onclick="savaUpdate()"
+      >
+        Save Changes
+      </button>
+
+      <input
+        type="text"
+        class="form-control my-4"
+        oninput="searchProduct(this.value)"
+        placeholder="Search with product name"
+      />
+      <table id="table" class="table text-white text-center my-5">
+        <thead>
+          <th>index</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Product Category</th>
+          <th>Product Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/main.js"></script>
+  </body>
+</html>
